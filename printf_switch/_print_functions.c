@@ -2,7 +2,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 int _putchar(char c)
@@ -71,7 +70,7 @@ int ftostring(double n, int precision)
         mov = 10 * mov;
     buffer = malloc(64);
     ppoint = (int) n;
-    apoint = (int)((n - ppoint) * mov);
+    apoint = (int)((n - ppoint) * mov); 
     i = 0;
     if (n != 0)
     {
