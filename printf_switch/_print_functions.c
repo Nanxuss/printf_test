@@ -26,10 +26,12 @@ int stringiterator(const char *s)
 int ntostring(int n, int base)
 {
     char *buffer;
-    int i, len, lim;
+    int i, len, lim, flag;
 
     i = 0;
     buffer = malloc(64);
+    flag = ((n < 0) ? 1 : 0);
+    n = ((n < 0) ? (n * -1) : n);
     if (n != 0)
     {
         while (n > 0)
@@ -43,6 +45,8 @@ int ntostring(int n, int base)
                     buffer[i++] = ((n % base) + '0');
             n = n / base;
         }
+        if (flag && (base == 10))
+            buffer[i++] = 45;    
         i = ((base == 2) ? i : i - 1);
         for (; i >= 0; i--)
             _putchar(buffer[i]);

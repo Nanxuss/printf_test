@@ -8,7 +8,7 @@
 int main(void)
 {
     char string_ex[] = "Example string";
-    int integer_ex = 42069;
+    int integer_ex = -42069;
     char char_ex = '?';
     float float_ex = 0.635;
     double double_ex = 9.11654;
