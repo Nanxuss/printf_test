@@ -1,3 +1,8 @@
+#include <unistd.h>
+#include <stdarg.h>
+#include <string.h>
+#include <stdlib.h>
+
 #ifndef MAIN
 #define MAIN
 
