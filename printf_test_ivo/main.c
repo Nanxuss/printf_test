@@ -1,8 +1,3 @@
-#include <unistd.h>
-#include <stdarg.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 int main(void)
@@ -21,5 +16,5 @@ int main(void)
     _printf("This is conversion from decimal to hex: %x\n", integer_ex);
     _printf("This is conversion from decimal to octal: %o\n", integer_ex);
     _printf("This is conversion from decimal to binary: %b\n", integer_ex);
-    _printf("This is a border case: %%");
+    _printf("This is a border case: %% \n");
 }

@@ -1,25 +1,5 @@
 #include "main.h"
 
-int (*func_finder)(const char flag)
-{
-    ffind selector[] = {
-        {'d', ntostring},
-        {'s', stringiterator},
-    };
-    int i;
-
-	i = 0;
-	while (selector[i].func != NULL)
-	{
-		if ((selector[i].func) == flag)
-		{
-			return (selector[i].func);
-		}
-		i++;
-	}
-	return (NULL);
-}
-
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -115,26 +95,4 @@ int ftostring(double n, int precision)
     len = strlen(buffer);
     free(buffer);
     return (len);
-}
-
-int _printf(const char *format, ...)
-{
-    int i, j, helper;
-    va_list ap;
-    char *dummy; 
-
-    i = 0;
-    j = 0;
-    va_start(ap, format);
-        while ((format != NULL) && (format[i] != '\0'))
-        {
-            if (format[i] == '%')
-                func_finder(format[i + 1]);
-            else
-                _putchar(format[i + 1]);
-        }
-    _putchar(10);
-    va_end(ap);
-
-    return (j);
 }

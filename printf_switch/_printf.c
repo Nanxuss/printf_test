@@ -1,7 +1,3 @@
-#include <unistd.h>
-#include <stdarg.h>
-#include <string.h>
-#include <stdlib.h>
 #include "main.h"
 
 int _printf(const char *format, ...)
@@ -82,8 +78,7 @@ int _printf(const char *format, ...)
                 break;
             
             default:
-                _putchar(format[i]);
-                i++;
+                _putchar(format[i++]);
                 j++;
                 break;
             }
