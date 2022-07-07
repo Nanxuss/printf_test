@@ -15,7 +15,7 @@ typedef struct function_type {
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int stringiterator(const char *s);
+int stringiterator(char *s);
 int ntostring(int n, int base);
 int ftostring(double n, int precision);
 ftype func_finder(char c);

@@ -5,7 +5,17 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int stringiterator(const char *s)
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}
+
+int stringiterator(char *s)
 {
     int i;
 
@@ -15,13 +25,13 @@ int stringiterator(const char *s)
             _putchar(s[i]);
     }
 
-    return (strlen(s));
+    return (_strlen(s));
 }
 
 int ntostring(int n, int base)
 {
     char *buffer;
-    int i, len, lim, flag;
+    int i, len, flag;
 
     i = 0;
     buffer = malloc(64);
@@ -34,10 +44,12 @@ int ntostring(int n, int base)
             if (base <= 10)
                 buffer[i++] = ((n % base) + '0');
             else if (base == 16)
+            {
                 if ((n % base) >= 10)
                     buffer[i++] = ((n % base) + 55);
                 else
                     buffer[i++] = ((n % base) + '0');
+            }
             n = n / base;
         }
         if (flag && (base == 10))
@@ -51,7 +63,7 @@ int ntostring(int n, int base)
         _putchar('0');
         return (1);
     }
-    len = strlen(buffer);
+    len = _strlen(buffer);
     free(buffer);
     return (len);
 }
@@ -81,6 +93,8 @@ int ftostring(double n, int precision)
             buffer[i++] = ((ppoint % 10) + '0');
             ppoint = ppoint / 10;
         }
+        if (n < 1)
+            buffer[i++] = '0';
         for (; i >= 0; i--)
             _putchar(buffer[i]);
     }
@@ -92,7 +106,7 @@ int ftostring(double n, int precision)
             _putchar(48);
         return (1);
     }
-    len = strlen(buffer);
+    len = _strlen(buffer);
     free(buffer);
     return (len);
 }
