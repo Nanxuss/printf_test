@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-    int i = 0, j = 0, helper;
+    int i = 0, j = 0, precision;
     ftype func_data;
     va_list ap;
 
@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
                         j += ntostring((va_arg(ap, int)), func_data.mod);
                         break;
                     case 3:
-                        j += ftostring((va_arg(ap, double)), ((func_data.fmt == '.') ? (format[i + 2] - '0') : func_data.mod));
+                        precision = ((func_data.fmt == '.') ? (format[i + 2] - '0') : func_data.mod);
+                        j += ftostring((va_arg(ap, double)), precision);
                         i = ((func_data.fmt == '.') ? i + 2 : i);
                         break;
                     case 4:
