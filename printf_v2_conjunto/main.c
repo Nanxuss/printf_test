@@ -17,6 +17,5 @@ int main(void)
     _printf("This is conversion from decimal to octal: %o\n", integer_ex);
     _printf("This is conversion from decimal to binary: %b\n", integer_ex);
     _printf("This is a border case: %% \n"); */
-
     return (0);
 }
