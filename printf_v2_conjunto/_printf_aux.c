@@ -23,7 +23,6 @@ int _strlen(char *s)
 
 int stringiterator(va_list ap, int mode)
 {
-    int i;
     char *s = va_arg(ap, char *);;
     
     (void) mode;
