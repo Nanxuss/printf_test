@@ -7,7 +7,7 @@
 #define PRNTF
 
 typedef struct function_type {
-    char fmt;
+    int fmt;
     int (*op)(va_list args, int mode);
     int mode;
 } ftype;
