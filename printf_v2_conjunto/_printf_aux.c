@@ -11,6 +11,13 @@ int _putchar(va_list ap, int mode)
 	return (1);
 }
 
+int singlewrite(va_list ap, int mode)
+{
+    (void) mode;
+    
+    return write(1, &c, 1);
+}
+
 int _strlen(char *s)
 {
 	int i = 0;
