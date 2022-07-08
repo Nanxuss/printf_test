@@ -38,7 +38,7 @@ int stringiterator(va_list ap, int mode)
     return (i + 1);
 }
 
-/* int ntostring(va_list ap, int base)
+int ntostring(va_list ap, int base)
 {
     char *buffer;
     int n;
@@ -77,6 +77,7 @@ int stringiterator(va_list ap, int mode)
     }
     len = _strlen(buffer);
     free(buffer);
+    va_end(ap);
     return (len);
 }
 
@@ -116,6 +117,7 @@ int untostring(va_list ap, int base)
     }
     len = _strlen(buffer);
     free(buffer);
+    va_end(ap);
     return (len);
 }
 
@@ -162,5 +164,6 @@ int ftostring(va_list ap, int precision)
     }
     len = _strlen(buffer);
     free(buffer);
+    va_end(ap);
     return (len);
-} */
+} 
