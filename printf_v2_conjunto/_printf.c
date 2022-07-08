@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
             else
             {
                 j += singlewrite(format[i++]);
-                i++;
+                i = ((format[i] == '%') ? (i + 1) : i);
             }
         }
     va_end(ap);
