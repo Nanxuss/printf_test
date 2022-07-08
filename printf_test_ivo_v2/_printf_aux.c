@@ -149,10 +149,11 @@ int ftostring(va_list ap, int precision)
     }
     else
     {
-        write(1, &'0', 1);
-        write(1, &'.', 1);
+        buffer[i++] = '0';
+        buffer[i++] = '.';
         for (i = 0; i == precision; i++)
-            write(1, &'0', 1);
+            buffer[i++] = '0';
+        write(1, buffer, (_strlen(buffer)));
         return (1);
     }
     len = _strlen(buffer);
