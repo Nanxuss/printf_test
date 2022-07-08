@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
     printf("Test1");
     va_start(ap, format);
-        while ((format != NULL) && (format[i] != '\0'))
+        for (; format[i]; i++)
         {
 			func_data = func_finder(format[i + 1]);
 			j += (*(func_data.op))(ap, func_data.mode);
