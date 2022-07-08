@@ -11,10 +11,8 @@ int _putchar(va_list ap, int mode)
 	return (1);
 }
 
-int singlewrite(va_list ap, int mode)
+int singlewrite(char c)
 {
-    (void) mode;
-    
     return write(1, &c, 1);
 }
 

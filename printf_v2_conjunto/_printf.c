@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
                 }
             }
             else
-                j += _putchar(format[i++]);
+                j += singlewrite(format[i++]);
         }
     va_end(ap);
     return (j);
