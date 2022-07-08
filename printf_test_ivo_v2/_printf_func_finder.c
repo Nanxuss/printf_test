@@ -20,7 +20,7 @@ ftype func_finder(char c)
 
     while (func[i].fmt != 0)
     {
-        if (func[i].fmt == c)
+        if (*(func[i].fmt) == c)
             return func[i];
         i++;
     }
