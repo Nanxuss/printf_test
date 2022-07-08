@@ -18,9 +18,12 @@ int _printf(const char *format, ...)
     va_start(ap, format);
         for (; format[i]; i++)
         {
-			func_data = func_finder(format[i + 1]);
-			j += (*(func_data.op))(ap, func_data.mode);
-			i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
+            if (format[i] == '%')
+			{
+                func_data = func_finder(format[i + 1]);
+			    j += (*(func_data.op))(ap, func_data.mode);
+			    i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
+            }
         }
     va_end(ap);
     return (j);
