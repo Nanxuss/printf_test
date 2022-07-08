@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
             }
             else
                 {
-                    j += write(1, &format[i], 1);
+                    write(1, &format[i], 1);
+                    j++;
                     i++;
                 }
         }
