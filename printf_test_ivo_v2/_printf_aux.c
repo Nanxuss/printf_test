@@ -30,7 +30,7 @@ int stringiterator(va_list ap, int mode)
     if (s)
     {
         for (i = 0; s[i]; i++)
-            write(1, s[i], 1);
+            write(1, &s[i], 1);
     }
 
     return (_strlen(s));
@@ -69,7 +69,8 @@ int ntostring(va_list ap, int base)
     }
     else
     {
-        write(1, 48, 1);
+        buffer[i++] = '0';
+        write(1, buffer[i], 1);
         return (1);
     }
     len = _strlen(buffer);
@@ -107,7 +108,8 @@ int untostring(va_list ap, int base)
     }
     else
     {
-        write(1, 48, 1);
+        buffer[i++] = '0';
+        write(1, buffer[i], 1);
         return (1);
     }
     len = _strlen(buffer);
