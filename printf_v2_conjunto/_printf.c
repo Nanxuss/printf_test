@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
     va_start(ap, format);
         while ((format[i] != '\0') && (format[i]))
         {
-            if ((format[i] == '%') && ((format[i + 1] != '%') && (format[i + 1] != '\0')))
+            if ((format[i] == '%') && (format[i + 1] != '%'))
 			{
                 func_data = func_finder(format[i + 1]);
 			    if (func_data.op != 0)
@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 			        i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
                 }
             }
+            else if (format[i - 1] != '%')
+                j += singlewrite(format[i]);
             else
                 j += singlewrite(format[i++]);
         }
