@@ -10,7 +10,7 @@ int _putchar(va_list ap, int mode)
 	return (write(1, &c, 1));
 }
 
-/* int _strlen(char *s)
+int _strlen(char *s)
 {
 	int i = 0;
 
@@ -18,7 +18,7 @@ int _putchar(va_list ap, int mode)
 		i++;
 
 	return (i);
-} */
+}
 
 int stringiterator(va_list ap, int mode)
 {
