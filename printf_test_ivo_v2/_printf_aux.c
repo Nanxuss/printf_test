@@ -10,7 +10,7 @@ int _putchar(va_list ap, int mode)
 	return (write(1, &c, 1));
 }
 
-int _strlen(char *s)
+/* int _strlen(char *s)
 {
 	int i = 0;
 
@@ -18,7 +18,7 @@ int _strlen(char *s)
 		i++;
 
 	return (i);
-}
+} */
 
 int stringiterator(va_list ap, int mode)
 {
@@ -36,7 +36,7 @@ int stringiterator(va_list ap, int mode)
     return (_strlen(s));
 }
 
-int ntostring(va_list ap, int base)
+/* int ntostring(va_list ap, int base)
 {
     char *buffer;
     int n;
@@ -161,4 +161,4 @@ int ftostring(va_list ap, int precision)
     len = _strlen(buffer);
     free(buffer);
     return (len);
-}
+} */
