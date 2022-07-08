@@ -1,4 +1,5 @@
 #include "_printf.h"
+#include <stdio.h>
 
 ftype func_finder(char c)
 {
@@ -18,6 +19,7 @@ ftype func_finder(char c)
     };
     int i = 0;
 
+    printf("Test2");
     while (func[i].fmt != 0)
     {
         if (func[i].fmt == c)

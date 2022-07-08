@@ -14,11 +14,11 @@ int _printf(const char *format, ...)
     ftype func_data;
     va_list ap;
 
+    printf("Test1");
     va_start(ap, format);
         while ((format != NULL) && (format[i] != '\0'))
         {
 			func_data = func_finder(format[i + 1]);
-            printf("%c, %d", func_data.fmt, func_data.mode);
 			j += (*(func_data.op))(ap, func_data.mode);
 			i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
         }
