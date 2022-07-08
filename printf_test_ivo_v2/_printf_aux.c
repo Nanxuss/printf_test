@@ -7,7 +7,9 @@ int _putchar(va_list ap, int mode)
     
     (void) mode;
     c = va_arg(ap, int);
-	return (write(1, &c, 1));
+    write(1, &c, 1);
+    va_end(ap);
+	return (1);
 }
 
 int _strlen(char *s)
@@ -32,8 +34,8 @@ int stringiterator(va_list ap, int mode)
         for (i = 0; s[i]; i++)
             write(1, &s[i], 1);
     }
-
-    return (_strlen(s));
+    va_end(ap);
+    return (i + 1);
 }
 
 /* int ntostring(va_list ap, int base)
