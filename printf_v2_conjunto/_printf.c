@@ -29,11 +29,7 @@ int _printf(const char *format, ...)
                 }
             }
             else
-                {
-                    write(1, &format[i], 1);
-                    j++;
-                    i++;
-                }
+                j += _putchar(format[i++]);
         }
     va_end(ap);
     return (j);
