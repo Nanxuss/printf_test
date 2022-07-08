@@ -18,7 +18,11 @@ ftype func_finder(char c)
     };
     int i = 0;
 
-    while ((func[i].fmt != c) && (func[i].fmt != 0))
+    while (func[i].fmt != 0)
+    {
+        if (func[i].fmt == c)
+            return func[i];
         i++;
+    }
     return func[i];
 }
