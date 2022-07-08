@@ -28,6 +28,11 @@ int _printf(const char *format, ...)
 			        i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
                 }
             }
+            else if (format[i + 1] == '%')
+            {
+                i++;
+                j += singlewrite(format[i++]);
+            }
             else
             {
                 j += singlewrite(format[i++]);
