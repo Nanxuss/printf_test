@@ -70,7 +70,7 @@ int ntostring(va_list ap, int base)
     else
     {
         buffer[i++] = '0';
-        write(1, buffer[i], 1);
+        write(1, &buffer[i], 1);
         return (1);
     }
     len = _strlen(buffer);
@@ -109,7 +109,7 @@ int untostring(va_list ap, int base)
     else
     {
         buffer[i++] = '0';
-        write(1, buffer[i], 1);
+        write(1, &buffer[i], 1);
         return (1);
     }
     len = _strlen(buffer);
