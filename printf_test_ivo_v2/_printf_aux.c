@@ -36,9 +36,10 @@ int stringiterator(va_list ap, int mode)
 int ntostring(va_list ap, int base)
 {
     char *buffer;
-    int n = (va_arg(ap, int));
+    int n;
     int i = 0, len, flag;
 
+    n = (va_arg(ap, int));
     buffer = malloc(64);
     flag = ((n < 0) ? 1 : 0);
     n = ((n < 0) ? (n * -1) : n);
@@ -76,10 +77,11 @@ int ntostring(va_list ap, int base)
 int untostring(va_list ap, int base)
 {
     char *buffer;
-    unsigned int n = (va_arg(ap, unsigned int));
+    unsigned int n;
     unsigned int i = 0;
     int len = 0;
 
+    n = (va_arg(ap, unsigned int));
     buffer = malloc(64);
     if (n != 0)
     {
@@ -113,9 +115,10 @@ int untostring(va_list ap, int base)
 int ftostring(va_list ap, int precision)
 {
     char *buffer;
-    double n = (va_arg(ap, double));
+    double n;
     int i, ppoint, len, mov, apoint;
 
+    n = (va_arg(ap, double));
     mov = 1;
     for (i = 0; i < precision; i++)
         mov = 10 * mov;
