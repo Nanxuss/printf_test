@@ -28,10 +28,9 @@ int _printf(const char *format, ...)
 			        i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
                 }
             }
-            else if (format[i - 1] != '%')
-                j += singlewrite(format[i]);
             else
                 j += singlewrite(format[i++]);
+                i++;
         }
     va_end(ap);
     return (j);
