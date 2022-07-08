@@ -29,8 +29,10 @@ int _printf(const char *format, ...)
                 }
             }
             else
+            {
                 j += singlewrite(format[i++]);
                 i++;
+            }
         }
     va_end(ap);
     return (j);
