@@ -24,16 +24,11 @@ int _strlen(char *s)
 int stringiterator(va_list ap, int mode)
 {
     int i;
-    char *s;
+    char *s = va_arg(ap, char *);;
     
     (void) mode;
-    s = va_arg(ap, char *);
-    if (s)
-    {
-        for (i = 0; s[i]; i++)
-            write(1, &s[i], 1);
-    }
 
+    write(1, s, _strlen(s));
     va_end(ap);
-    return (i + 1);
+    return (_strlen(s));
 }

@@ -8,7 +8,7 @@
 
 typedef struct function_type {
     int fmt;
-    int (*op)(va_list args, int mode);
+    int (*op)(va_list ap, int mode);
     int mode;
 } ftype;
 
