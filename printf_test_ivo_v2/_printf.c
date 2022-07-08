@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-    int i = 0, j = 0, precision;
+    int i = 0, j = 0;
     ftype func_data;
     va_list ap;
 

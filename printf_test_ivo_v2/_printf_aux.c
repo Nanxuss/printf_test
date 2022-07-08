@@ -3,8 +3,9 @@
 int _putchar(va_list ap, int mode)
 {
     (void) mode;
-    char c = va_arg(ap, char);
+    char c;
     
+    c = va_arg(ap, int);
 	return (write(1, &c, 1));
 }
 
@@ -22,8 +23,9 @@ int stringiterator(va_list ap, int mode)
 {
     (void) mode;
     int i;
-    char *s = va_arg(ap, char *);
-
+    char *s;
+    
+    s = va_arg(ap, char *);
     if (s)
     {
         for (i = 0; s[i]; i++)
@@ -99,7 +101,7 @@ int untostring(va_list ap, int base)
             n = n / base;
         }    
         i = ((base == 2) ? i : i - 1);
-        for (; i >= 0; i--)
+        for (; i == 0; i--)
             write(1, buffer[i], 1);;
     }
     else
