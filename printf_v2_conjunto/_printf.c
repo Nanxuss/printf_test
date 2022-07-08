@@ -1,5 +1,6 @@
 #include "_printf.h"
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * _printf: print string to stdout using variable arguments
