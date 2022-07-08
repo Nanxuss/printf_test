@@ -1,10 +1,11 @@
 #include "_printf.h"
+#include <unistd.h>
 
 int _putchar(va_list ap, int mode)
 {
-    (void) mode;
     char c;
     
+    (void) mode;
     c = va_arg(ap, int);
 	return (write(1, &c, 1));
 }
@@ -21,10 +22,10 @@ int _strlen(char *s)
 
 int stringiterator(va_list ap, int mode)
 {
-    (void) mode;
     int i;
     char *s;
     
+    (void) mode;
     s = va_arg(ap, char *);
     if (s)
     {
