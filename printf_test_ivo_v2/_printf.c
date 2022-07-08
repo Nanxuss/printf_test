@@ -1,4 +1,5 @@
 #include "_printf.h"
+#include <stdio.h>
 
 /**
  * _printf: print string to stdout using variable arguments
@@ -17,6 +18,7 @@ int _printf(const char *format, ...)
         while ((format != NULL) && (format[i] != '\0'))
         {
 			func_data = func_finder(format[i + 1]);
+            printf("%c, %d", func_data.fmt, func_data.mode);
 			j += (*(func_data.op))(ap, func_data.mode);
 			i = ((func_data.fmt == '.') ? (i + 4) : (i + 2));
         }
