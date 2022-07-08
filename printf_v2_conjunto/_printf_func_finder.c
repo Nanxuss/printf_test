@@ -5,6 +5,7 @@ ftype func_finder(char c)
     ftype func[] = {
         {'c', _putchar, 0},
         {'s', stringiterator, 0},
+        {'d', ntostring, 10},
         {'0', 0, 0}
     };
     int i = 0;
